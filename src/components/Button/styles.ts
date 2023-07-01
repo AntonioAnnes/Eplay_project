@@ -14,7 +14,7 @@ export const ButtonContainer = styled.button`
 `
 
 export const ButtonLink = styled(Link)`
-  border: 2px solide ${Cores.branca};
+  border: 2px solid ${Cores.branca};
   color: ${Cores.branca};
   background-color: transparent;
   font-size: 16px;
