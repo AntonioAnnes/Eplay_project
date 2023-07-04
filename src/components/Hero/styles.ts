@@ -1,15 +1,17 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Banner = styled.div`
   position: relative;
-  height: 480px;
   display: block;
+  height: 480px;
   width: 100%;
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+
   padding-top: 16px;
 
   &::after {
@@ -39,7 +41,7 @@ export const Banner = styled.div`
 
 export const Infos = styled.div`
   padding: 16px;
-  background-color: ${Cores.preta};
+  background-color: ${cores.preta};
   max-width: 290px;
   font-weight: bold;
 
@@ -50,10 +52,10 @@ export const Infos = styled.div`
   p {
     font-size: 18px;
     margin: 16px 0;
-  }
 
-  span {
-    display: block;
-    text-decoration: line-through;
+    span {
+      display: block;
+      text-decoration: line-through;
+    }
   }
 `

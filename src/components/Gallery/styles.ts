@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { cores } from '../../styles'
 
 export const Items = styled.ul`
   display: flex;
 `
+
 export const Action = styled.div`
   position: absolute;
   top: 0;
@@ -23,7 +24,7 @@ export const Item = styled.li`
   position: relative;
 
   > img {
-    border: 2px solid ${Cores.branca};
+    border: 2px solid ${cores.branca};
     border-radius: 8px;
     width: 150px;
     height: 150px;
@@ -45,8 +46,13 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
-  display: flex;
+  display: none;
   align-items: center;
+  justify-content: center;
+
+  &.visivel {
+    display: flex;
+  }
 
   .overlay {
     position: absolute;
@@ -57,6 +63,7 @@ export const Modal = styled.div`
     background-color: rgba(0, 0, 0, 0.73);
   }
 `
+
 export const ModalContent = styled.div`
   max-width: 960px;
   position: relative;
@@ -72,8 +79,19 @@ export const ModalContent = styled.div`
       font-weight: bold;
     }
   }
-  img {
+
+  > img {
+    width: 100%;
+  }
+
+  img,
+  iframe {
     display: block;
     max-width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 480px;
   }
 `

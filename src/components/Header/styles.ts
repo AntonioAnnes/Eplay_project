@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { cores } from '../../styles'
 
 export const HeaderBar = styled.header`
-  background-color: ${Cores.cinza};
+  background-color: ${cores.cinza};
   padding: 24px;
   border-radius: 16px;
   margin-bottom: 80px;
@@ -11,7 +11,7 @@ export const HeaderBar = styled.header`
   justify-content: space-between;
 
   a {
-    color: ${Cores.branca};
+    color: ${cores.branca};
     text-decoration: none;
     font-weight: bold;
   }
@@ -30,6 +30,7 @@ export const Links = styled.ul`
 export const LinkItem = styled.li`
   margin-right: 16px;
 `
+
 export const LinkCart = styled.a`
   display: flex;
 

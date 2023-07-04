@@ -25,10 +25,11 @@ const Header = () => (
         </Links>
       </nav>
     </div>
-    <LinkCart>
+    <LinkCart href="#">
       0 - produto(s)
       <img src={carrinho} alt="Carrinho" />
     </LinkCart>
   </HeaderBar>
 )
+
 export default Header
