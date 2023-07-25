@@ -1,47 +1,30 @@
-import { Imagem, Titulo, Precos } from './styles'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-import bannerImg from '../../assets/images/banner-homem-aranha.png'
-import Tag from '../Tag'
-import Button from '../Button'
-import { Game } from '../../pages/Home'
-import { useEffect, useState } from 'react'
+import { colors } from '../../styles'
 
-import { formataPreco } from '../ProductsList'
+import { Props } from '.'
 
-const Banner = () => {
-  const [game, setGame] = useState<Game>()
+export const ButtonContainer = styled.button<Props>`
+  border: 2px solid
+    ${(props) => (props.variant === 'primary' ? colors.green : colors.white)};
+  color: ${colors.white};
+  background-color: ${(props) =>
+    props.variant === 'primary' ? colors.green : 'transparent'};
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+`
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/eplay/destaque')
-      .then((res) => res.json())
-      .then((res) => setGame(res))
-  }, [])
-
-  if (!game) {
-    return <h3>Carregando...</h3>
-  }
-
-  return (
-    <Imagem style={{ backgroundImage: `url(${game.media.cover})` }}>
-      <div className="container">
-        <Tag size="big">Destaque do dia</Tag>
-        <div>
-          <Titulo>{game.name}</Titulo>
-          <Precos>
-            De <span>{formataPreco(game.prices.old)}</span> <br />
-            por apenas {formataPreco(game.prices.current)}
-          </Precos>
-        </div>
-        <Button
-          type="link"
-          to={`/product/${game.id}`}
-          title="Clique aqui para aproveitar esta oferta"
-        >
-          Aproveitar
-        </Button>
-      </div>
-    </Imagem>
-  )
-}
-
-export default Banner
+export const ButtonLink = styled(Link)`
+  border: 2px solid ${colors.white};
+  color: ${colors.white};
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+`
